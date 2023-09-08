@@ -1,0 +1,10 @@
+version: '3.9'
+services:
+  app:
+    image: node:latest
+    working_dir: /udemy/latihan-nestjs1
+    volumes:
+      - ./:/udemy/latihan-nestjs1
+    ports:
+      - 3000:3000
+    command: bash -c "npm install && npx prisma generate && npm run build && npm run start:prod"
